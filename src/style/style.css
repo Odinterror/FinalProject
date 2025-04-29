@@ -17,6 +17,30 @@ body {
   padding: 0 auto;
 }
 /** Header **/
+.menu-link,
+.menu-link1 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px; /* відступ для риски */
+}
+
+.menu-link::after,
+.menu-link1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor; /* рисочка кольору тексту */
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover::after,
+.menu-link1:hover::after {
+  width: 100%;
+}
+
 .container {
   margin: 0 auto;
   width: 1440px;
@@ -102,6 +126,10 @@ body {
   border-radius: 10px;
   margin-top: 700px;
   position: static;
+  transition: transform 0.3s ease;
+}
+.btn1:hover {
+  transform: scale(1.05);
 }
 .textbutton {
   font-family: "Roboto", sans-serif;
@@ -167,7 +195,7 @@ body {
   background-repeat: no-repeat;
   position: relative;
   position: absolute;
-  left: 395px;
+  left: 471px;
   top: 1664px;
   width: 340px;
   height: 380px;
@@ -410,10 +438,12 @@ input {
   transition: 0.3s;
   width: 248px;
   height: 55px;
+  transition: transform 0.3s ease;
 }
 
 .order-btn:hover {
   opacity: 0.8;
+  transform: scale(1.05);
 }
 /* Footer */
 /* .footer {
